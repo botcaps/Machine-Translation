@@ -7,3 +7,4 @@ sacrebleu==2.5.1
 torchsummaryX==1.3.0
 matplotlib
 scikit-learn
+datasets
