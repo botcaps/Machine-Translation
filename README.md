@@ -31,3 +31,50 @@ machine_translation_project/
 └── outputs/
     └── models/                   # Saved models
     └── logs/                     # Logs and metrics
+
+
+
+
+
+                  ┌────────────────────────┐
+                  │   Data Acquisition     │
+                  │ (Multi30K, GZipped)    │
+                  └──────────┬─────────────┘
+                             │
+                  ┌──────────▼────────────┐
+                  │   Data Preprocessing  │
+                  │ - Tokenization (SpaCy)│
+                  │ - Vocabulary Building │
+                  └──────────┬────────────┘
+                             │
+                  ┌──────────▼────────────┐
+                  │ Dataset & Dataloader  │
+                  │ - Padding & batching  │
+                  └──────────┬────────────┘
+                             │
+                  ┌──────────▼────────────┐
+                  │ Model Architecture    │
+                  │ - Transformer Encoder │
+                  │ - Transformer Decoder │
+                  │ - Positional Encoding │
+                  └──────────┬────────────┘
+                             │
+                  ┌──────────▼────────────┐
+                  │   Training Loop       │
+                  │ - Forward + Backward  │
+                  │ - Mixed Precision     │
+                  │ - Noam LR Scheduler   │
+                  └──────────┬────────────┘
+                             │
+                  ┌──────────▼────────────┐
+                  │   Evaluation & BLEU   │
+                  │ - Validation Epochs   │
+                  │ - Final Test BLEU     │
+                  └──────────┬────────────┘
+                             │
+                  ┌──────────▼────────────┐
+                  │ Inference & Decoding  │
+                  │ - Greedy decoding     │
+                  │ - <sos>/<eos> control │
+                  └───────────────────────┘
+
